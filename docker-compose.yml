@@ -1,0 +1,67 @@
+version: '3'
+services:
+  app:
+    build:
+      context: .
+# =========ローカルと本番切り替え===========
+    # command: bundle exec puma -C config/puma.rb -e production
+    command: bundle exec puma -C config/puma.rb
+# ======================================
+    volumes:
+      - .:/Lvup2
+      - public-data:/Lvup2/public
+      - tmp-data:/Lvup2/tmp
+      - log-data:/Lvup2/log
+    networks:
+      - Lvup2-network
+    environment:  #capybara用のの設定で使っていた
+      - "SELENIUM_DRIVER_URL=http://selenium_chrome:4444/wd/hub" # 追記
+    #本番環境ではコメントアウト
+    depends_on:
+      - db
+      - chrome
+
+  chrome:
+    image: selenium/standalone-chrome:latest # 追記
+    ports:
+      - 4444:4444
+  
+
+
+  db:
+    image: mysql:8.0
+    command: --default-authentication-plugin=mysql_native_password
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_USER: user_name
+      MYSQL_PASSWORD: password
+      MYSQL_DATABASE: Lvup2_development
+    volumes:
+      - db-data:/var/lib/mysql
+    networks:
+      - Lvup2-network
+
+  web:
+    build:
+      context: ./nginx_docker
+    volumes:
+      - public-data:/Lvup2/public
+      - tmp-data:/Lvup2/tmp
+    ports:
+      - 80:80
+    depends_on:
+      - app
+    networks:
+      - Lvup2-network
+
+
+
+volumes:
+  public-data:
+  tmp-data:
+  log-data:
+  db-data:
+
+networks:
+  Lvup2-network:
+    external: true
