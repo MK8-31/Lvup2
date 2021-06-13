@@ -51,6 +51,7 @@ test:
 #
 production:
   <<: *default
-  database: Lvup2_production
-  username: Lvup2
-  password: <%= ENV['LVUP2_DATABASE_PASSWORD'] %>
+  host: us-cdbr-east-04.cleardb.com
+  database: heroku_2d1be5f01d1ba25
+  username: b7e05e2e65c02c
+  password: dbc34278
