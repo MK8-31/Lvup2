@@ -49,9 +49,19 @@ test:
 # Read https://guides.rubyonrails.org/configuring.html#configuring-a-database
 # for a full overview on how database connection configuration can be specified.
 #
+# production:
+#   <<: *default
+#   host: us-cdbr-east-04.cleardb.com
+#   database: heroku_2d1be5f01d1ba25
+#   username: b7e05e2e65c02c
+#   password: dbc34278
+
 production:
-  <<: *default
-  host: us-cdbr-east-04.cleardb.com
-  database: heroku_2d1be5f01d1ba25
-  username: b7e05e2e65c02c
-  password: dbc34278
+  adapter: postgresql
+  encoding: unicode
+  # For details on connection pooling, see Rails configuration guide
+  # https://railsguides.jp/configuring.html#データベース接続をプールする
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  database: sample_app_production
+  username: sample_app
+  password: <%= ENV['SAMPLE_APP_DATABASE_PASSWORD'] %>
