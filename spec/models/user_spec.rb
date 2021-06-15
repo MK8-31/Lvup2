@@ -70,4 +70,8 @@ RSpec.describe User, type: :model do
         @user.password = @user.password_confirmation = 'a'*5
         expect(@user.valid?).to eq false
     end
+
+    it 'authenticate?に渡す値がnilだとエラーにならないかどうか' do
+        expect(@user.authenticate?('')).to eq false
+    end
 end

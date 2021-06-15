@@ -30,6 +30,6 @@ describe 'users_login',type: :feature do
         expect(page).to have_current_path root_path
         expect(page).to have_link 'Log in',href: login_path
         expect(page).to have_link 'Log out',href: logout_path,count: 0
-
     end
+
 end
