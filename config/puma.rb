@@ -9,8 +9,8 @@
 
 # stdout_redirect "#{app_root}/log/puma.stdout.log", "#{app_root}/log/puma.stderr.log", true
 
-Pumaの設定ファイル
-heroku 用
+# Pumaの設定ファイル
+# heroku 用
 max_threads_count = ENV.fetch("RAILS_MAX_THREADS") { 5 }
 min_threads_count = ENV.fetch("RAILS_MIN_THREADS") { max_threads_count }
 threads min_threads_count, max_threads_count
