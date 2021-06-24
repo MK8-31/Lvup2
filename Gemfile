@@ -63,6 +63,7 @@ group :test do
   # Easy installation and use of web drivers to run system tests with browsers
   gem 'webdrivers'
   gem 'show_me_the_cookies'
+  gem 'rails-controller-testing', '1.0.4'
 end
 
 group :production do

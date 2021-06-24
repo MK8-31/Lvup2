@@ -1,7 +1,11 @@
 require 'rails_helper'
 
 feature 'users_signup', type: :feature do
-    scenario 'ユーザー登録成功' do
+    before do
+        ActionMailer::Base.deliveries.clear
+    end
+
+    scenario 'ユーザー登録成功とアカウント有効化' do
         visit signup_path
         expect(page).to have_content('ユーザー登録')
 
@@ -10,8 +14,19 @@ feature 'users_signup', type: :feature do
         fill_in 'user_password',with: 'foobar'
         fill_in 'user_password_confirmation',with: 'foobar'
         find('input[name="commit"]').click
+        expect(ActionMailer::Base.deliveries.size).to eq 1
+        # user = assigns(:user)
+        # expect(user.activated?).to eq false
+        # #有効化してない状態でログイン
+        # log_in(user)
+        # expect(logged_in?).to eq false
+        #有効化トークンが不正の場合->requests spec
 
-        expect(page).to have_content('testuser')
+        #トークンは正しいがメールアドレスが無効->requests spec
+        
+
+
+        # expect(page).to have_content('testuser')
     end
 
     scenario 'ユーザー登録失敗' do

@@ -5,7 +5,9 @@ module RequestHelpers
 
     def log_in_as(user,password: 'password',remember_me: '1')
         post login_path,params: {session: {email: user.email,password: password,remember_me: remember_me } }
-        session[:user_id] = user.id #これを先に書くとsessionがないというエラーになる。
+        if user.activated?
+            session[:user_id] = user.id #これを先に書くとsessionがないというエラーになる。
+        end
     end
 
     def remember(user)

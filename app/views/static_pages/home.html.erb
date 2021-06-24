@@ -2,11 +2,12 @@
   <h1>Welcome to the Sample App</h1>
 
   <h2>
-    This is the home page for the
-    <a href="https://railstutorial.jp/">Ruby on Rails Tutorial</a>
-    sample application.
+    This is the home page
   </h2>
-
-  <%= link_to "Sign up now!", signup_path, class: "btn btn-lg btn-primary" %>
+  <% if logged_in? %>
+    <%= link_to "Log out",logout_path,method: :delete,class: "btn btn-lg btn-success" %>
+  <% else %>
+    <%= link_to "Sign up now!", signup_path, class: "btn btn-lg btn-primary" %>
+  <% end %>
 </div>
 
