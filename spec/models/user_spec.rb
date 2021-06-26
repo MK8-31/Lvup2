@@ -71,7 +71,7 @@ RSpec.describe User, type: :model do
         expect(@user.valid?).to eq false
     end
 
-    it 'authenticate?に渡す値がnilだとエラーにならないかどうか' do
-        expect(@user.authenticate?(:remember,'')).to eq false
+    it 'authenticated?に渡す値がnilだとエラーにならないかどうか' do
+        expect(@user.authenticated?(:remember,'')).to eq false
     end
 end
