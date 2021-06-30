@@ -5,6 +5,10 @@ ruby '2.6.6'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
 gem 'rails', '~> 6.1.3', '>= 6.1.3.2'
+
+gem 'active_storage_validations', '0.8.2'
+gem 'image_processing',           '1.9.3'
+gem 'mini_magick',                '4.9.5'
 # Use mysql as the database for Active Record
 gem 'mysql2', '~> 0.5'
 # Use Puma as the app server
@@ -64,6 +68,10 @@ group :test do
   gem 'webdrivers'
   gem 'show_me_the_cookies'
   gem 'rails-controller-testing', '1.0.4'
+
+  #rspecでpaginationを表示
+  gem 'kaminari'
+  gem 'kaminari-bootstrap'
 end
 
 group :production do

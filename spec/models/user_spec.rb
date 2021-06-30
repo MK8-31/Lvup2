@@ -74,4 +74,12 @@ RSpec.describe User, type: :model do
     it 'authenticated?に渡す値がnilだとエラーにならないかどうか' do
         expect(@user.authenticated?(:remember,'')).to eq false
     end
+
+    it 'destroyに連携してmicropostも消去' do
+        @user.save
+        @user.microposts.create!(content: "Lorem ipsum")
+        expect{
+            @user.destroy
+        }.to change{ User.count }.by(-1)
+    end
 end
