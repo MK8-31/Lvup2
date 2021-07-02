@@ -48,6 +48,17 @@ describe 'users_controller',type: :request do
         expect(response).to redirect_to root_url
     end
 
+    it "ログインしないでfollowingに行くとリダイレクト" do
+        get following_user_path(@user)
+        expect(response).to redirect_to login_url
+    end
+
+    it "ログインしないでfollowersに行くとリダイレクト" do
+        get followers_user_path(@user)
+        expect(response).to redirect_to login_url
+    end
+
+
 
 
 

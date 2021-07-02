@@ -82,4 +82,42 @@ RSpec.describe User, type: :model do
             @user.destroy
         }.to change{ User.count }.by(-1)
     end
+
+    it "should follow and unfollow a user" do
+        user = create(:user)
+        other_user = create(:other_user)
+        expect(user.following?(other_user)).to eq false
+        user.follow(other_user)
+        expect(user.following?(other_user)).to eq true
+        expect(other_user.followers.include?(user)).to eq true
+        user.unfollow(other_user)
+        expect(user.following?(other_user)).to eq false
+    end
+
+    it '正しい投稿のみを表示' do
+        user = create(:user)
+        other_user = create(:other_user)
+        archer = create(:archer)
+        create(:orange,user_id: user.id)
+        create(:orange,user_id: other_user.id)
+        create(:orange,user_id: archer.id)
+        user.active_relationships.create!(followed_id: other_user.id)
+        other_user.active_relationships.create!(followed_id: user.id)
+        user.active_relationships.create!(followed_id: archer.id)
+        archer.active_relationships.create!(followed_id: user.id)
+
+        #フォローしているユーザーの投稿を確認
+        archer.microposts.each do |post_self|
+            expect(user.feed.include?(post_self)).to eq true
+        end
+        #自分の投稿を確認
+        user.microposts.each do |post_self|
+            expect(user.feed.include?(post_self)).to eq true
+        end
+        #フォローしてないユーザーの投稿を確認
+        archer.microposts.each do |post_self|
+            expect(other_user.feed.include?(post_self)).to eq false
+        end
+        
+    end
 end
