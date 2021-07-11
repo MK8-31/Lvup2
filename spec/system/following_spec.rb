@@ -11,6 +11,7 @@ describe 'following test',type: :system do
         @other_user.active_relationships.create!(followed_id: @user.id)
         @user.active_relationships.create!(followed_id: @archer.id)
         @archer.active_relationships.create!(followed_id: @user.id)
+
     end
 
     it "following page" do

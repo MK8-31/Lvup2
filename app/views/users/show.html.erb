@@ -12,8 +12,8 @@
     </section>
     <section class="lv col-md-6">
       <b>職業：<%= @profession %></b>
-      <p>Lv: <%= Lvpro.order(created_at: :desc).find_by(user_id: @user.id,profession: @user.profession.profession).experience_point/100 %></p>
-      <p>Ex: <%= Lvpro.order(created_at: :desc).find_by(user_id: @user.id,profession: @user.profession.profession).experience_point%100 %> / 100</p>
+      <p>Lv: <%= @lv %></p>
+      <p>Ex: <%= @ex %> / 100</p>
     </section>
     <section class="lv col-md-6">
       <% if @user.profession.profession ==0 %>

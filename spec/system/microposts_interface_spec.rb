@@ -7,7 +7,7 @@ describe "micropost_interface",type: :system do
 
     it 'マイクロポストインターフェース' do
         log_in(@user)
-        visit root_path
+        visit home_path
         expect(page).to have_selector 'input[type=file]'
         #無効な送信
         expect{
@@ -23,7 +23,7 @@ describe "micropost_interface",type: :system do
             attach_file "#{Rails.root}/spec/fixtures/kitten.jpg"
             find('input[name="commit"]').click
         }.to change{ Micropost.count }.by(1)
-        expect(current_path).to eq root_path
+        expect(current_path).to eq home_path
         expect(page).to have_content content
         expect(page).to have_selector("img[src$='kitten.jpg']")
         #投稿を削除
