@@ -1,0 +1,25 @@
+<% provide(:title, "記録") %>
+<h1>記録</h1>
+
+<!-- 
+<p>
+profession: <%= current_user.profession.profession %>
+<% if !@before_lv.nil? %>
+  lv: <%= @before_lv.lv %>   ex: <%= @before_lv.experience_point %>
+<% else %>
+  before_lv: nil
+<% end %>
+</p>
+-->
+
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= form_with(model: @lv,local: true) do |f| %>
+      <%= render 'shared/error_messages',object: f.object %>
+      <b>時間（分）</b>
+      <%= f.number_field :experience_point, class: 'form-control' %>
+
+      <%= f.submit "記録する", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>

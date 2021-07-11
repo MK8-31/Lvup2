@@ -1,8 +1,11 @@
 Rails.application.routes.draw do
+  get 'professions/edit'
+  get 'lvpros/new'
   get 'password_resets/new'
   get 'password_resets/edit'
   get 'sessions/new'
-  root 'static_pages#home'
+  root 'static_pages#top'
+  get  '/home',    to: 'static_pages#home'
   get  '/help',    to: 'static_pages#help'
   get  '/about',   to: 'static_pages#about'
   get  '/contact', to: 'static_pages#contact'
@@ -10,6 +13,8 @@ Rails.application.routes.draw do
   get    '/login',   to: 'sessions#new'
   post   '/login',   to: 'sessions#create'
   delete '/logout',  to: 'sessions#destroy'
+  get '/top',to: 'static_pages#top'
+  get 'lv',to: 'lvpros#new'
   resources :users do
     member do
       get :following, :followers
@@ -20,4 +25,6 @@ Rails.application.routes.draw do
   resources :password_resets,     only: [:new, :create, :edit, :update]
   resources :microposts,          only: [:create, :destroy]
   resources :relationships,       only: [:create, :destroy]
+  resources :lvpros,              only: [:new,:create, :destroy]
+  resources :professions,         only: [:edit,:update]
 end

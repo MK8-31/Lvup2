@@ -34,3 +34,14 @@ following = users[2..50]
 followers = users[3..40]
 following.each { |followed| user.follow(followed) }
 followers.each { |follower| follower.follow(user) }
+
+
+users = User.order(:created_at).take(99)
+users.each { |user| user.create_profession!(profession: 0)}
+users.each { |user| user.lvpros.create!(experience_point: rand(9000),profession: 0)
+                    user.lvpros.first.update!(lv: user.lvpros.first.experience_point/100+1)}
+users.each { |user| user.lvpros.create!(experience_point: rand(9000),profession: 1)
+                    user.lvpros.second.update!(lv: user.lvpros.second.experience_point/100+1)}
+users.each { |user| user.lvpros.create!(experience_point: rand(9000),profession: 2)
+                    user.lvpros.third.update!(lv: user.lvpros.third.experience_point/100+1)}
+

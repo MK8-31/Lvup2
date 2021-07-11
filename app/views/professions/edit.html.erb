@@ -1,0 +1,29 @@
+<% provide(:title, "転職") %>
+<h1 class="white">転職</h1>
+
+<div class="col center row  white">
+    <h2>＜現在の職業＞</h2>
+      <% if current_user.profession.profession ==0 %>
+        <h2><b>剣士</b></h2>
+        
+        <%= image_tag 'sword.jpg',width: '80' %>
+      <% elsif  current_user.profession.profession ==1 %>
+        <h2><b>魔法使い</b></h2>
+        
+        <%= image_tag 'wizard.jpg',width: '80'  %>
+      <% else %>
+        <h2><b>弓士</b></h2>       
+        <%= image_tag 'archer.jpg',width: '80',class: "d-block mx-auto"  %>
+      <% end %>
+</div>
+<div class="row white profession-edit">
+  <div class="col-md-6 col-md-offset-3">
+    <%= form_with(model: @profession,local: true) do |f| %>
+    <%= render 'shared/error_messages',object: f.object %>
+      <b>職業</b>
+      <%= f.select :profession,[['剣士',0],['魔法使い',1],['弓士',2]], class: 'form-control' %>
+
+      <%= f.submit "転職する", class: "btn btn-success" %>
+    <% end %>
+  </div>
+</div>

@@ -72,6 +72,8 @@ Rails.application.configure do
   config.action_mailer.delivery_method = :smtp
   host = 'agile-taiga-97826.herokuapp.com'
   config.action_mailer.default_url_options = { host: host }
+  #for heroku
+
   ActionMailer::Base.smtp_settings = {
     :port           => ENV['MAILGUN_SMTP_PORT'],
     :address        => ENV['MAILGUN_SMTP_SERVER'],
@@ -80,6 +82,21 @@ Rails.application.configure do
     :domain         => host,
     :authentication => :plain,
   }
+
+  #for gmail
+
+  # config.action_mailer.smtp_settings = {
+  #   #gmail利用時はaddress,domain,portは下記で固定
+  #   address: "smtp.gmail.com",
+  #   domain: 'gmail.com',
+  #   port: 587,
+  #   #gmailのユーザアカウント（xxxx@gmail.com)※念のため、credentials.yml.enc行き
+  #   user_name: ENV['GMAIL_ADDRESS'],
+  #   #gmail２段階認証回避のためにアプリケーションでの利用パスワードを取得、必ずcredentials.yml.endに設定を！！
+  #   password: ENV['GMAIL_PASSWORD'],
+  #   #パスワードをBase64でエンコード
+  #   authentication: :login
+
   # Enable locale fallbacks for I18n (makes lookups for any locale fall back to
   # the I18n.default_locale when a translation cannot be found).
   config.i18n.fallbacks = true

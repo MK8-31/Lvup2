@@ -10,6 +10,19 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @microposts = @user.microposts.paginate(page: params[:page])
+    if @user.profession.profession == 0
+      @profession = "剣士"
+    elsif @user.profession.profession == 1
+      @profession = "魔法使い"
+    elsif @user.profession.profession == 2
+      @profession = "弓士"
+    end
+    @data0 = @user.lvpros.where(profession: 0).last
+    @data1 = @user.lvpros.where(profession: 1).last
+    @data2 = @user.lvpros.where(profession: 2).last
+    @data_ex = [["剣士", @data0.experience_point],["魔法使い",@data1.experience_point],["弓士",@data2.experience_point]]
+    @data_lv = [["剣士", @data0.lv],["魔法使い",@data1.lv],["弓士",@data2.lv]]
+
   end
 
   def new

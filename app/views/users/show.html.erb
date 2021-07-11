@@ -1,24 +1,46 @@
 <% provide(:title, @user.name) %>
-<div class="row">
+<div class="row white">
   <aside class="col-md-4">
-    <section class="user_info">
+    <section class="user_info col-md-12">
       <h1>
         <%= gravatar_for @user %>
         <%= @user.name %>
       </h1>
     </section>
-    <section class="stats">
+    <section class="stats col-md-12">
       <%= render 'shared/stats' %>
     </section>
-  </aside>
+    <section class="lv col-md-6">
+      <b>職業：<%= @profession %></b>
+      <p>Lv: <%= Lvpro.order(created_at: :desc).find_by(user_id: @user.id,profession: @user.profession.profession).experience_point/100 %></p>
+      <p>Ex: <%= Lvpro.order(created_at: :desc).find_by(user_id: @user.id,profession: @user.profession.profession).experience_point%100 %> / 100</p>
+    </section>
+    <section class="lv col-md-6">
+      <% if @user.profession.profession ==0 %>
+        <%= image_tag 'sword.jpg',width: '80' %>
+      <% elsif  @user.profession.profession ==1 %>
+        <%= image_tag 'wizard.jpg',width: '80'  %>
+      <% else %>
+        <%= image_tag 'archer.jpg',width: '80'  %>
+      <% end %>
+    </section>
+
+
+  </aside> 
   <div class="col-md-8">
+    <%= column_chart @data_lv,xtitle: "職業",ytitle: "レベル", colors: ["#00CCFF", "#CCCCFF","#66FFCC"] %>
+  </div>
+
+
+  <div class="col-md-12">
     <%= render 'follow_form' if logged_in? %>
     <% if @user.microposts.any? %>
       <h3>Microposts (<%= @user.microposts.count %>)</h3>
       <ol class="microposts">
-        <%= render @microposts %>
+        <%= render @microposts %>   
       </ol>
       <%= will_paginate @microposts %>
     <% end %>
   </div>
+
 </div>
