@@ -85,7 +85,7 @@ Rails.application.configure do
 
   #for gmail
 
-  config.action_mailer.smtp_settings = {
+  ActionMailer::Base.smtp_settings = {
     #gmail利用時はaddress,domain,portは下記で固定
     address: "smtp.gmail.com",
     domain: 'gmail.com',
