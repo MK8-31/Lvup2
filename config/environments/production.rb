@@ -74,28 +74,28 @@ Rails.application.configure do
   config.action_mailer.default_url_options = { host: host }
   #for heroku
 
-  ActionMailer::Base.smtp_settings = {
-    :port           => ENV['MAILGUN_SMTP_PORT'],
-    :address        => ENV['MAILGUN_SMTP_SERVER'],
-    :user_name      => ENV['MAILGUN_SMTP_LOGIN'],
-    :password       => ENV['MAILGUN_SMTP_PASSWORD'],
-    :domain         => host,
-    :authentication => :plain,
-  }
+  # ActionMailer::Base.smtp_settings = {
+  #   :port           => ENV['MAILGUN_SMTP_PORT'],
+  #   :address        => ENV['MAILGUN_SMTP_SERVER'],
+  #   :user_name      => ENV['MAILGUN_SMTP_LOGIN'],
+  #   :password       => ENV['MAILGUN_SMTP_PASSWORD'],
+  #   :domain         => host,
+  #   :authentication => :plain,
+  # }
 
   #for gmail
 
-  # config.action_mailer.smtp_settings = {
-  #   #gmail利用時はaddress,domain,portは下記で固定
-  #   address: "smtp.gmail.com",
-  #   domain: 'gmail.com',
-  #   port: 587,
-  #   #gmailのユーザアカウント（xxxx@gmail.com)※念のため、credentials.yml.enc行き
-  #   user_name: ENV['GMAIL_ADDRESS'],
-  #   #gmail２段階認証回避のためにアプリケーションでの利用パスワードを取得、必ずcredentials.yml.endに設定を！！
-  #   password: ENV['GMAIL_PASSWORD'],
-  #   #パスワードをBase64でエンコード
-  #   authentication: :login
+  config.action_mailer.smtp_settings = {
+    #gmail利用時はaddress,domain,portは下記で固定
+    address: "smtp.gmail.com",
+    domain: 'gmail.com',
+    port: 587,
+    #gmailのユーザアカウント（xxxx@gmail.com)※念のため、credentials.yml.enc行き
+    user_name: ENV['GMAIL_ADDRESS'],
+    #gmail２段階認証回避のためにアプリケーションでの利用パスワードを取得、必ずcredentials.yml.endに設定を！！
+    password: ENV['GMAIL_PASSWORD'],
+    #パスワードをBase64でエンコード
+    authentication: :login
 
   # Enable locale fallbacks for I18n (makes lookups for any locale fall back to
   # the I18n.default_locale when a translation cannot be found).

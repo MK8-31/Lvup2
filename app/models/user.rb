@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+  has_many :likes, dependent: :destroy
   has_one :profession,dependent: :destroy,class_name: "Profession"
   has_many :lvpros,dependent: :destroy,class_name: "Lvpro"
   has_many :microposts, dependent: :destroy

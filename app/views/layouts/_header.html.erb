@@ -1,7 +1,22 @@
-<header class="navbar navbar-fixed-top navbar-inverse">
+<header class="navbar navbar-fixed-top navbar-inverse navbar-expand-md">
   <div class="container">
-    <%= link_to "lvup app", root_path, id: "logo" %>
-    <nav>
+
+    <!-- 追記ここから-->
+    <div class="navbar-header">
+
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <!-- 追記ここまで-->
+
+      <%= link_to "lvup app", root_path, id: "logo" %>
+    <!-- 追記ここから-->
+    </div>
+    <!-- 追記ここまで-->
+    <nav class="collapse navbar-collapse" id="navbar">
       <ul class="nav navbar-nav navbar-right">
         <li><%= link_to "Home", home_path %></li>
         <% if logged_in? %>

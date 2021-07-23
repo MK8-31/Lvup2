@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'likes/create'
+  get 'likes/destroy'
   get 'professions/edit'
   get 'lvpros/new'
   get 'password_resets/new'
@@ -17,7 +19,12 @@ Rails.application.routes.draw do
   get 'lv',to: 'lvpros#new'
   resources :users do
     member do
-      get :following, :followers
+      get :following, :followers, :likes
+    end
+  end
+  resources :users do
+    member do
+      get :likes
     end
   end
   resources :users
@@ -27,4 +34,5 @@ Rails.application.routes.draw do
   resources :relationships,       only: [:create, :destroy]
   resources :lvpros,              only: [:new,:create, :destroy]
   resources :professions,         only: [:edit,:update]
+  resources :likes,               only: [:create, :destroy]
 end

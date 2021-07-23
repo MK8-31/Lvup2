@@ -66,6 +66,7 @@ p {
 
 /* header */
 
+
 #logo {
   float: left;
   margin-right: 10px;
@@ -78,6 +79,9 @@ p {
   &:hover {
     color: white;
     text-decoration: none;
+  }
+  @media screen and (max-width: 760px) {
+    margin-left: 20px;
   }
 }
 

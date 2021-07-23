@@ -64,6 +64,9 @@ GEM
       zeitwerk (~> 2.3)
     addressable (2.7.0)
       public_suffix (>= 2.0.2, < 5.0)
+    after_commit_action (1.1.0)
+      activerecord (>= 3.0.0)
+      activesupport (>= 3.0.0)
     autoprefixer-rails (10.2.5.1)
       execjs (> 0)
     bcrypt (3.1.13)
@@ -88,6 +91,10 @@ GEM
     chartkick (4.0.4)
     childprocess (3.0.0)
     concurrent-ruby (1.1.9)
+    counter_culture (1.12.0)
+      activerecord (>= 3.0.0)
+      activesupport (>= 3.0.0)
+      after_commit_action (~> 1.0)
     crass (1.0.6)
     database_cleaner (2.0.1)
       database_cleaner-active_record (~> 2.0.0)
@@ -295,6 +302,7 @@ DEPENDENCIES
   byebug
   capybara (>= 3.26)
   chartkick
+  counter_culture (~> 1.8)
   database_cleaner
   dotenv-rails
   factory_bot_rails
