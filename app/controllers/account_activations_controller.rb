@@ -6,9 +6,9 @@ class AccountActivationsController < ApplicationController
             user.activate
             log_in user
             flash[:success] = "アカウントが有効化されました。"
-            current_user.lvpros.create!(experience_point: 0,profession: 0)
-            current_user.lvpros.create!(experience_point: 0,profession: 1)
-            current_user.lvpros.create!(experience_point: 0,profession: 2)
+            current_user.lvpros.create!(lv: 1,experience_point: 0,profession: 0)
+            current_user.lvpros.create!(lv: 1,experience_point: 0,profession: 1)
+            current_user.lvpros.create!(lv: 1,experience_point: 0,profession: 2)
             redirect_to user
         else
             flash[:danger] = "アカウント有効化リンクが無効です。"

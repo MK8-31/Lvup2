@@ -39,6 +39,21 @@ Rails.application.configure do
   host = 'localhost'                     # ローカル環境
   config.action_mailer.default_url_options = { host: host, protocol: 'http' }
 
+  config.action_mailer.delivery_method = :smtp
+
+  config.action_mailer.smtp_settings = {
+    #gmail利用時はaddress,domain,portは下記で固定
+    address: "smtp.gmail.com",
+    domain: 'gmail.com',
+    port: 587,
+    #gmailのユーザアカウント（xxxx@gmail.com)※念のため、credentials.yml.enc行き
+    user_name: ENV['GMAIL_ADDRESS'],
+    #gmail２段階認証回避のためにアプリケーションでの利用パスワードを取得、必ずcredentials.yml.endに設定を！！
+    password: ENV['GMAIL_PASSWORD'],
+    #パスワードをBase64でエンコード
+    authentication: :login
+  }
+
   config.action_mailer.perform_caching = false
 
   # Print deprecation notices to the Rails logger.

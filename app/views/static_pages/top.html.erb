@@ -1,6 +1,9 @@
 <% provide(:title,"Top") %>
 
 <h1 class="main-h1 slide-bottom show">さあ！<br>冒険に出かけよう！</h1>
+<div class="center signup-btn">
+   <%= link_to "登録する", signup_path, class: "btn btn-lg btn-warning" %>
+</div>
 <section id="about">
     <h2 class="slide-bottom show">About<h1>
     <p class="slide-bottom show">このアプリは習慣化をより簡単にするために開発されました。現実をRPGゲームのように考えることで
@@ -34,7 +37,9 @@
    </div>
 
 </div>
-
+<div class="center mb">
+   <%= link_to "登録する", signup_path, class: "btn btn-lg btn-info" %>
+</div>
 
 
 <div class="row homeskil slide-bottom show">
