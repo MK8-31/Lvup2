@@ -89,7 +89,7 @@ Rails.application.configure do
     #gmail利用時はaddress,domain,portは下記で固定
     address: "smtp.gmail.com",
     domain: 'gmail.com',
-    port: 465,
+    port: 587,
     #gmailのユーザアカウント（xxxx@gmail.com)※念のため、credentials.yml.enc行き
     user_name: ENV['GMAIL_ADDRESS'],
     #gmail２段階認証回避のためにアプリケーションでの利用パスワードを取得、必ずcredentials.yml.endに設定を！！
