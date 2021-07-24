@@ -25,7 +25,7 @@ describe 'users_login',type: :feature do
         expect(page).to have_current_path user_path(@user)
         expect(page).to have_link 'Log in',href: login_path,count: 0
         expect(page).to have_link 'Log out',href: logout_path
-        expect(page).to have_link 'Profile',href: user_path(@user)
+        expect(page).to have_link 'プロファイル',href: user_path(@user)
         click_link 'Log out'
         expect(page).to have_current_path root_path
         expect(page).to have_link 'Log in',href: login_path
