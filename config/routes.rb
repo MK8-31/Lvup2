@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   get 'password_resets/edit'
   get 'sessions/new'
   root 'static_pages#top'
+  get  '/lvupeffect', to: 'static_pages#lvupeffect'
   get  '/contact', to: 'static_pages#contact'
   get  '/news', to: 'static_pages#news'
   get  '/home',    to: 'static_pages#home'

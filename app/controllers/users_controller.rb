@@ -17,6 +17,7 @@ class UsersController < ApplicationController
     elsif @user.profession.profession == 2
       @profession = "弓士"
     end
+    @star = Lvpro.order(created_at: :desc).find_by(user_id: @user.id,profession: @user.profession.profession).star
     @lv = Lvpro.order(created_at: :desc).find_by(user_id: @user.id,profession: @user.profession.profession).experience_point/100+1
     @ex = Lvpro.order(created_at: :desc).find_by(user_id: @user.id,profession: @user.profession.profession).experience_point%100
     @data0 = @user.lvpros.where(profession: 0).last

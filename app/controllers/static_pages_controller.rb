@@ -14,4 +14,8 @@ class StaticPagesController < ApplicationController
 
   def news
   end
+
+  def lvupeffect
+    gon.user_id = current_user.id
+  end
 end

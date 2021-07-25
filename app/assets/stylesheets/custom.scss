@@ -396,7 +396,8 @@ span.image {
 }
 
 .top-image {
-  margin-top: 40px;
+  padding-top: 40px;
+  margin-top: 100px;
   margin-bottom: 40px;
 }
 
@@ -421,3 +422,45 @@ span.image {
 	transition: all 1s ease-out;
  }
 
+.lvupeffect {
+}
+
+.lvupeffectpage {
+  background-color: white;
+  padding-bottom: 20vh;
+  position: relative;
+   h1 {
+     position: absolute;
+     top: 10%;
+     left: 5%;
+     font-size: 17vw;
+     font-weight: bold;
+   }
+  
+
+}
+
+
+
+.red {
+  color: red;
+}
+
+.blue {
+  color: blue;
+}
+
+.green {
+  color: green;
+}
+
+.orange {
+  color: orange;
+}
+
+
+canvas {
+
+  width: 100%;
+  height: 100vh;
+}
