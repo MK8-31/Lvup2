@@ -48,6 +48,10 @@ h1 {
   letter-spacing: -2px;
   margin-bottom: 30px;
   text-align: center;
+  // font-size: 8vw!important;
+  @media screen and (max-width: 500px) {
+    font-size: 8vw!important;
+  }
 }
 
 h2 {
@@ -62,6 +66,38 @@ h2 {
 p {
   font-size: 1.1em;
   line-height: 1.7em;
+  // font-size: 3vw;
+  @media screen and (max-width: 500px) {
+    font-size: 3vw;
+  }
+}
+
+a {
+  // font-size: 3vw;//test
+  @media screen and (max-width: 500px) {
+    font-size: 3vw;
+  }
+}
+
+span {
+  // font-size: 3vw;//test
+  @media screen and (max-width: 500px) {
+    font-size: 3vw;
+  }
+}
+
+label {
+  // font-size: 3vw;
+  @media screen and (max-width: 500px) {
+    font-size: 3vw;
+  }
+}
+
+b {
+  // font-size: 3vw;
+  @media screen and (max-width: 500px) {
+    font-size: 3vw;
+  }
 }
 
 h3 {
@@ -70,7 +106,14 @@ h3 {
 
 
 /* header */
-
+nav {
+  a {
+    // font-size: 1.5vw!important;
+    @media screen and (max-width: 500px) {
+      font-size: 1.5vw!important;
+    }
+  }
+}
 
 #logo {
   float: left;
@@ -85,6 +128,7 @@ h3 {
     color: white;
     text-decoration: none;
   }
+
   @media screen and (max-width: 760px) {
     margin-left: 20px;
   }
@@ -97,10 +141,18 @@ footer {
   padding-top: 5px;
   border-top: 1px solid $gray-medium-light;
   color: $gray-light;
+  // font-size: 2vw!important;
+  @media screen and (max-width: 500px) {
+    font-size: 2vw!important;
+  }
   a {
     color: $gray;
     &:hover {
       color: $gray-darker;
+    }
+    // font-size: 2vw!important;
+    @media screen and (max-width: 500px) {
+      font-size: 2vw!important;
     }
   }
   small {
@@ -150,6 +202,10 @@ aside {
       letter-spacing: -1px;
       margin-bottom: 3px;
       margin-top: 0px;
+      // font-size: 5vw!important;//test
+      @media screen and (max-width: 500px) {
+        font-size: 5vw!important;
+      }
     }
   }
 }
@@ -208,6 +264,13 @@ input, textarea, select, .uneditable-input {
   width: 100%;
   margin-bottom: 15px;
   @include box_sizing;
+  // font-size: 3vw!important;//test
+  // height: 200%!important;//test
+  @media screen and (max-width: 500px) {
+    font-size: 3vw!important;
+    height: 200%!important;
+  }
+
 }
 
 input {
@@ -263,10 +326,20 @@ input {
   li {
     padding: 10px 0;
     border-top: 1px solid #e8e8e8;
+    // padding: 50px 0;//test
+    @media screen and (max-width: 500px) {
+      padding: 50px 0;
+    }
   }
   .user {
     margin-top: 5em;
     padding-top: 0;
+  }
+  img {
+    // width: 13vw;//test
+    @media screen and (max-width: 500px) {
+      width: 13vw;
+    }
   }
   .content {
     display: block;
@@ -274,7 +347,11 @@ input {
     img {
       display: block;
       padding: 5px 0;
+      
     }
+
+
+
   }
   .timestamp {
     color: $gray-light;
@@ -292,6 +369,15 @@ aside {
   textarea {
     height: 100px;
     margin-bottom: 5px;
+    @media screen and (max-width: 500px) {
+      height: 200px;
+    }
+  }
+  img {
+    // width: 13vw;//test
+    @media screen and (max-width: 500px) {
+      width: 13vw;
+    }
   }
 }
 
@@ -327,6 +413,15 @@ span.image {
   padding-bottom: 20vw;
   width: 100%;
 
+  .topmessage {
+    height: 90vh;
+    @media screen and (max-width: 500px) {
+      padding-top: 40vh;
+      height: 100vh;
+      display: block;
+    }
+  }
+
   section {
     overflow: hidden;
     text-align: center;
@@ -336,6 +431,11 @@ span.image {
     width: 100vw;
     background-size: cover;
     margin: 0 calc(50% - 50vw);
+    @media screen and (max-width: 500px) {
+      padding-top: 25vh;
+      height: 60vh;  
+      display: block;
+    }
 
     h2 {
       font-size: 6vw;
@@ -433,8 +533,11 @@ span.image {
      position: absolute;
      top: 10%;
      left: 5%;
-     font-size: 17vw;
+     font-size: 17vw!important;
      font-weight: bold;
+     @media screen and (max-width: 500px) {
+      font-size: 15vw!important;
+    }
    }
   
 

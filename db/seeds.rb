@@ -1,8 +1,8 @@
 # メインのサンプルユーザーを1人作成する
 User.create!(name:  "Example User",
     email: "example@example.com",
-    password:              "foobar",
-    password_confirmation: "foobar",
+    password:              "foobarMS1029",
+    password_confirmation: "foobarMS1029",
     admin: true,
     activated: true,
     activated_at: Time.zone.now)
@@ -14,8 +14,8 @@ email = "example-#{n+1}@railstutorial.org"
 password = "password"
 User.create!(name:  name,
     email: email,
-    password:              password,
-    password_confirmation: password,
+    password:              passwordLV10,
+    password_confirmation: passwordLV10,
     activated: true,
     activated_at: Time.zone.now)
 end
