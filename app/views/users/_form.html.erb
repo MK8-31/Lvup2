@@ -5,8 +5,8 @@
   <%= f.label :email %>
   <%= f.email_field :email, class: 'form-control',placeholder: "Gmail推奨" %>
   <%= f.label :password %>
-  <%= f.password_field :password, class: 'form-control' %>
+  <%= f.password_field :password, class: 'form-control',placeholder: "6文字以上" %>
   <%= f.label :password_confirmation %>
-  <%= f.password_field :password_confirmation, class: 'form-control' %>
+  <%= f.password_field :password_confirmation, class: 'form-control',placeholder: "6文字以上" %>
   <%= f.submit yield(:button_text), class: "btn btn-primary" %>
 <% end %>
