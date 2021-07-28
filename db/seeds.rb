@@ -11,11 +11,11 @@ User.create!(name:  "Example User",
 99.times do |n|
 name  = Faker::Name.name
 email = "example-#{n+1}@railstutorial.org"
-password = "password"
+password = "passwordLV10UP"
 User.create!(name:  name,
     email: email,
-    password:              passwordLV10,
-    password_confirmation: passwordLV10,
+    password:              password,
+    password_confirmation: password,
     activated: true,
     activated_at: Time.zone.now)
 end
@@ -37,7 +37,7 @@ followers.each { |follower| follower.follow(user) }
 
 
 users = User.order(:created_at).take(99)
-users.each { |user| user.create_profession!(profession: 0)}
+users.each { |user| user.create_profession!(profession: rand(3))}
 users.each { |user| user.lvpros.create!(experience_point: rand(9000),profession: 0)}
 users.each { |user| user.lvpros.create!(experience_point: rand(9000),profession: 1)}
 users.each { |user| user.lvpros.create!(experience_point: rand(9000),profession: 2)}

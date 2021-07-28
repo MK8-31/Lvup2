@@ -10,23 +10,23 @@
     <section class="stats col-md-12">
       <%= render 'shared/stats' %>
     </section>
-    <section class="lv col-md-6">
+    <section class="lv col-md-12 col-sm-12">
       <b>職業：<%= @profession %></b>
       <% if @star > 0 %>
         <p><i class="fas fa-star orange"></i>  x  <%= @star %></p>
       <% end %>
       <p>Lv: <%= @lv %></p>
-      <p>Ex: <%= @ex %> / 100</p>
-    </section>
-    <section class="lv col-md-6">
+      <p>Ex: <%= @ex %> / 100 </p>
+      <progress value="<%= @ex %>" max="100"></progress>
       <% if @user.profession.profession ==0 %>
-        <%= image_tag 'sword.jpg',width: '80' %>
+        <%= image_tag 'sword.jpg',class: "profession-image" %>
       <% elsif  @user.profession.profession ==1 %>
-        <%= image_tag 'wizard.jpg',width: '80'  %>
+        <%= image_tag 'wizard.jpg',class: "profession-image"  %>
       <% else %>
-        <%= image_tag 'archer.jpg',width: '80'  %>
+        <%= image_tag 'archer.jpg',class: "profession-image"  %>
       <% end %>
     </section>
+
 
 
   </aside> 

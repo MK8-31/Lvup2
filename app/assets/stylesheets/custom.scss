@@ -381,6 +381,8 @@ aside {
   }
 }
 
+
+
 span.image {
   margin-top: 10px;
   input {
@@ -416,6 +418,7 @@ span.image {
   .topmessage {
     padding-top: 30vh;
     height: 90vh;
+
     @media screen and (max-width: 500px) {
       padding-top: 40vh;
       height: 100vh;
@@ -548,10 +551,13 @@ span.image {
      position: absolute;
      top: 10%;
      left: 5%;
-     font-size: 17vw!important;
-     font-weight: bold;
-     @media screen and (max-width: 500px) {
-      font-size: 15vw!important;
+    
+    span {
+      font-size: 17vw!important;
+      font-weight: bold;
+      @media screen and (max-width: 500px) {
+       font-size: 19vw!important;
+      }
     }
    }
   
@@ -582,3 +588,25 @@ canvas {
   width: 100%;
   height: 100vh;
 }
+.lv {
+  position: relative;
+
+  .profession-image {
+    position: absolute;
+    top: 0%;
+    right: 10%;
+    width: 50px;
+    width: 80px;
+    @media screen and (max-width: 500px) {
+      position: absolute;
+      top: 0%;
+      right: 15%;
+    }
+    @media screen and (max-width: 400px) {
+      position: absolute;
+      top: 0%;
+      right: 5%;
+    }
+  }
+}
+
