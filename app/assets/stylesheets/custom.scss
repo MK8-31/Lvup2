@@ -420,7 +420,7 @@ span.image {
     height: 90vh;
 
     @media screen and (max-width: 500px) {
-      padding-top: 40vh;
+      padding-top: 30vh;
       height: 100vh;
       display: block;
     }
@@ -477,6 +477,7 @@ span.image {
     font-size: 7vw;
     @media screen and (max-width: 500px) {
       font-size: 10vw!important;
+      margin-bottom: 30vw;
     }
   }
 
