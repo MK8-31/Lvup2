@@ -2,7 +2,13 @@
 <div class="topmessage">
    <h1 class="main-h1 slide-bottom show">さあ！<br>冒険に出かけよう！</h1>
    <div class="center signup-btn">
-      <%= link_to "登録する", signup_path, class: "btn btn-lg btn-warning" %>
+      <% if logged_in? %>
+         <%= link_to "記録する", new_lvpro_path, class: "btn btn-lg btn-warning" %>
+         <%= link_to "投稿する", home_path, class: "btn btn-lg btn-success" %>
+         <%= link_to "確認する", current_user, class: "btn btn-lg btn-info" %>
+      <% else %>
+         <%= link_to "登録する", signup_path, class: "btn btn-lg btn-warning" %>
+      <% end %>
    </div>
 </div>
 <section id="about">
@@ -39,7 +45,13 @@
 
 </div>
 <div class="center mb">
-   <%= link_to "登録する", signup_path, class: "btn btn-lg btn-info" %>
+   <% if logged_in? %>
+      <%= link_to "記録する", new_lvpro_path, class: "btn btn-lg btn-warning" %>
+      <%= link_to "投稿する", home_path, class: "btn btn-lg btn-success" %>
+      <%= link_to "確認する", current_user, class: "btn btn-lg btn-info" %>
+   <% else %>
+      <%= link_to "登録する", signup_path, class: "btn btn-lg btn-info" %>
+   <% end %>
 </div>
 
 
