@@ -4,8 +4,9 @@ Lvup Appは習慣化を簡単にするために制作した習慣化サポート
 小説を読んでいて、人生もRPGゲームのように成長が目に見えてわかりやすければもっとやる気が出るのでは？と思い作成しました。
 レスポンシブ対応しているのでスマホからもご確認いただけます。  
   
-<img width="1265" alt="スクリーンショット 2021-03-18 9 35 53" src="https://user-images.githubusercontent.com/68171652/111556252-71124400-87cd-11eb-82a8-90fb5fc6187f.png">
-<img width="242" alt="スクリーンショット 2021-03-18 9 38 54" src="https://user-images.githubusercontent.com/68171652/111556444-f85fb780-87cd-11eb-82f0-291fdb65a619.png">
+<img width="1263" alt="スクリーンショット 2021-07-31 9 52 00" src="https://user-images.githubusercontent.com/68171652/127723675-5c59c87c-70d2-4b30-9c87-ba57ad10bf91.png">
+<img width="313" alt="スクリーンショット 2021-07-31 9 53 29" src="https://user-images.githubusercontent.com/68171652/127723692-80cd78ef-3cf3-4e69-b5b1-a8852f1de201.png">
+
 
 
 # URL
