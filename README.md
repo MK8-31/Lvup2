@@ -49,3 +49,4 @@ https://agile-taiga-97826.herokuapp.com
 # 機能について
 
 記録した時間１分を1exｐ（経験値）として100expで1レベル上がります。
+
